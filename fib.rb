@@ -11,3 +11,11 @@ def fib(num)
 	end
 	return arr
 end
+
+def fib_rec(num, arr = [])
+	arr << 0 if arr.empty?
+	return arr << num if num < 2
+	fib_rec(num - 1, arr) << (arr[arr.length - 1] + arr[arr.length - 2])
+end
+
+puts fib_rec(5)
